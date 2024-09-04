@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate") %>
+
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h3>Update your Listing</h3>
+<form method="POST" action="/listings/<%=listing._id%>?_method=PUT">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input name="listing[title]" value="<%=listing.title%>" type="text" class="form-control" /> 
+  </div>
+  
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea name="listing[description]" cols="30" rows="5" class="form-control" ><%=listing.description%></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+  <input
+    name="listing[image][url]" value="<%=listing.image.url%>" type="text" class="form-control"/>
+  </div>
+
+  <!-- Here we have a row .......... -->
+  <div class="row"> 
+    <div class="mb-3 col-md-4">
+      <label for="Price" class="form-label">Price</label>
+      <input name="listing[price]" placeholder="enter price" type="number" value="<%=listing.price%>"  class="form-control"/>
+    </div>
+    
+    <div class="mb-3 col-md-8">
+      <label for="Country" class="form-label">Country</label>
+      <input name="listing[country]" placeholder="enter country" type="text" value="<%=listing.country%>"  class="form-control"/>
+    </div>
+  </div>
+  <!-- Here we have a row .......... -->
+
+<div class="mb-3">
+  <label for="exampleInputEmail1" class="Location">Location</label>
+  <input
+    name="listing[location]" value="<%=listing.title%>" type="text" class="form-control"/>
+  </div>
+  <button class="btn btn-dark btn-like">Update the listing</button> 
+</form>
+<br>
+</div>
+</div>
